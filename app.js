@@ -69,6 +69,7 @@ var options = document.getElementsByClassName("options");
 var radio = document.getElementsByClassName("radio");
 var display = document.querySelector(".percentage");
 var circle = document.querySelector(".circle");
+var message = document.getElementById("message");
 var index = 0;
 var marks = 0;
 
@@ -93,7 +94,6 @@ function submit() {
   if (index == mcqs.length) {
     var totalMarks = (marks / 50) * 100;
     display.innerHTML = totalMarks + "%";
-    var message = document.getElementById("message");
     if (totalMarks >= 70) {
       circle.style.stroke = "green";
       message.innerHTML = "Passed";
@@ -110,5 +110,7 @@ function reset(){
    index = 0
    marks = 0
    display.parentNode.parentNode.parentNode.style.display = "none";
+   message.innerHTML = "Go To Home"
+   circle.style.stroke = "rgb(199, 32, 32)"
    quiz()
 }
